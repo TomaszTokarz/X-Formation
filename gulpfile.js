@@ -17,18 +17,18 @@ gulp.task('default', function (callback) {
 });
 
 gulp.task('sass', function() {
-  return gulp.src('app/scss/**/*.scss') // Gets all files ending with .scss in app/scss
+  return gulp.src('scss/*.scss') // Gets all files ending with .scss in scss
     .pipe(sass())
-    .pipe(gulp.dest('app/css'))
+    .pipe(gulp.dest('css'))
     .pipe(browserSync.reload({
       stream: true
     }))
 });
 
 gulp.task('watch', ['browserSync', 'sass'], function (){
-  gulp.watch('app/scss/**/*.scss', ['sass']);
-  gulp.watch('app/**/*.html', browserSync.reload);
-  gulp.watch('app/js/**/*.js', browserSync.reload);
+  gulp.watch('scss/**/*.scss', ['sass']);
+  gulp.watch('**/*.html', browserSync.reload);
+  gulp.watch('js/**/*.js', browserSync.reload);
 });
 
 gulp.task('build', function (callback) {
@@ -39,7 +39,7 @@ gulp.task('build', function (callback) {
 });
 
 gulp.task('useref', function(){
-  return gulp.src('app/*.html')
+  return gulp.src('*.html')
     .pipe(useref())
     // Minifies only if it's a JavaScript file
     .pipe(gulpIf('*.js', uglify()))
@@ -49,7 +49,7 @@ gulp.task('useref', function(){
 });
 
 gulp.task('images', function(){
-  return gulp.src('app/images/**/*.+(png|jpg|jpeg|gif|svg)')
+  return gulp.src('images/**/*.+(png|jpg|jpeg|gif|svg)')
   .pipe(cache(imagemin({
       interlaced: true
   })))
@@ -57,7 +57,7 @@ gulp.task('images', function(){
 });
 
 gulp.task('fonts', function() {
-  return gulp.src('app/fonts/**/*')
+  return gulp.src('fonts/**/*')
   .pipe(gulp.dest('dist/fonts'))
 });
 
@@ -68,7 +68,7 @@ gulp.task('clean:dist', function() {
 gulp.task('browserSync', function() {
   browserSync.init({
     server: {
-      baseDir: 'app'
+      baseDir: ''
     },
   })
 });
