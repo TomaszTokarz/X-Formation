@@ -1,6 +1,6 @@
-angular.module("myapp", [])
+var app = angular.module("myapp", [])
 
-.controller("HelloController", function($scope) {
+app.controller("HelloController", function($scope) {
    $scope.helloTo = {};
-   $scope.helloTo.title = "AngularJS";
+   $scope.helloTo.title = "X Formation";
 });
