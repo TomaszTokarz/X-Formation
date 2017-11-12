@@ -2,7 +2,7 @@
 <html>
 
    <head>
-     <title>X Formation - recruitment test</title>
+     <title>X Formation - recruitment app</title>
 
      <!--build:css css/styles.min.css-->
         <link rel='stylesheet' href='css/main.css'>
@@ -12,15 +12,22 @@
 
    <body ng-app = "myapp">
 
-      <div ng-controller = "HelloController" >
-         <h2>Welcome to <span ng-bind="helloTo.title"></span> app </h2>
-      </div>
+     <header class="header">
+       <div class="header__logo__container">LOGO</div>
+       <div class="header__menu__button"></div>
+     </header>
+     <main class="main">
+       <div class="main__container">
+       </div>
+     </main>
+     <footer class="footer"></footer>
 
       <div ng-controller = "EmployeesList" >
-         <div ng-repeat="employee in employees">
-           <span ng-bind="employee.first_name"></span>
-           <span ng-bind="employee.last_name"></span>
-         </div>
+        <div class="employees__list"></div>
+        <div ng-repeat="employee in employees">
+          <span ng-bind="employee.first_name"></span>
+          <span ng-bind="employee.last_name"></span>
+        </div>
       </div>
 
       <!-- <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script> -->
