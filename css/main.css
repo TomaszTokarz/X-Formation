@@ -44,3 +44,49 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0; }
+
+.header {
+  border-bottom: 3px solid #dfdfdf; }
+  .header__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    max-width: 1200px;
+    min-height: 50px;
+    margin: auto;
+    padding: 0 20px; }
+  .header__logo__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  .header__menu__button {
+    cursor: pointer; }
+    .header__menu__button__item {
+      background-color: #afafaf;
+      width: 30px;
+      height: 4px;
+      margin: 4px 0;
+      -webkit-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out; }
+    .header__menu__button:hover .header__menu__button__item {
+      background-color: #b01f24; }
+
+.footer {
+  border-top: 3px solid #dfdfdf;
+  line-height: 30px; }
+  .footer__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+  .footer__link {
+    cursor: pointer;
+    text-decoration: none; }

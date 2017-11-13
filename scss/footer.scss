@@ -1,0 +1,18 @@
+@import 'settings';
+
+
+.footer {
+
+  border-top: 3px solid $mediumgrey;
+  line-height: 30px;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__link {
+    cursor: pointer;
+    text-decoration: none;
+  }
+}
