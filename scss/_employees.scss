@@ -1,0 +1,40 @@
+@import '_settings';
+
+
+.employees {
+
+  &__list {
+    &__item {
+      margin: 20px;
+      cursor: pointer;
+    }
+  }
+}
+
+.employee {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+
+  &__name {
+    font-size: 30px;
+  }
+
+  &__short_description {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    padding: 10px 20px;
+    border: 1px solid $main;
+    background: $white;
+    z-index: 2;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover &__short_description {
+    opacity: 1;
+  }
+}

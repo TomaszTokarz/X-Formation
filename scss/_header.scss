@@ -1,0 +1,61 @@
+@import '_settings';
+
+
+.header {
+  border-bottom: 2px solid $main;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: $wrappers_width;
+    min-height: 80px;
+    margin: auto;
+    padding: 0 30px;
+  }
+
+  &__logo {
+    &__container {
+      &__image {
+        padding: 10px 0;
+      }
+    }
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    color: $main;
+
+    &__avatar {
+      margin-right: 10px;
+    }
+
+    &__name {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    &__role {
+      font-style: italic;
+      padding-left: 10px;
+    }
+  }
+
+  // &__menu {
+    // &__button {
+    //   cursor: pointer;
+    //
+    //   &__item {
+    //     background-color: $darkgrey;
+    //     width: 50px;
+    //     height: 8px;
+    //     margin: 8px 0;
+    //     transition: all 0.3s ease-in-out;
+    //   }
+    //
+    //   &:hover &__item {
+    //     background-color: $main;
+    //   }
+    // }
+  // }
+}

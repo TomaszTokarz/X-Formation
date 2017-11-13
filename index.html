@@ -1,59 +1,71 @@
 <!doctype html>
 <html>
-
    <head>
      <title>X Formation - recruitment app</title>
 
-    <!--build:css css/styles.min.css-->
-      <link rel='stylesheet' href='css/main.css'>
-    <!-- endbuild -->
-
+     <!--build:css css/styles.min.css-->
+       <link rel='stylesheet' href='css/main.css'>
+     <!-- endbuild -->
    </head>
 
    <body ng-app = "myapp">
-
      <header class="header">
        <div class="header__container">
          <div class="header__logo__container">
-           <div class="header__logo__container__image">Logo</div>
-           <div class="header__logo__container__name">X Formation</div>
+           <div class="header__logo__container__image"><img src="images/logo-small.png"/></div>
          </div>
-         <div class="header__menu__button">
-           <div class="header__menu__button__item"></div>
-           <div class="header__menu__button__item"></div>
-           <div class="header__menu__button__item"></div>
+         <div class="header__user">
+           <i class="fa fa-3x fa-user-circle-o header__user__avatar" aria-hidden="true"></i>
+           <div class="header__user__info">
+             <div class="header__user__name">Tomasz Tokarz</div>
+             <div class="header__user__role">User</div>
+           </div>
          </div>
+         <!-- <div class="header__menu__button">
+           <div class="header__menu__button__item"></div>
+           <div class="header__menu__button__item"></div>
+           <div class="header__menu__button__item"></div>
+         </div> -->
        </div>
      </header>
+
      <main class="main">
        <div class="main__container">
-         <div ng-controller = "EmployeesList" >
+         <div ng-controller = "EmployeesList" class="employees">
            <div class="employees__list"></div>
-           <div ng-repeat="employee in employees">
-             <span ng-bind="employee.first_name"></span>
-             <span ng-bind="employee.last_name"></span>
-             <span ng-bind="employee.role"></span>
-             <span ng-bind="employee.experience"></span>
+           <div ng-repeat="employee in employees" class="employees__list__item employee">
+             <div class="employee__name">
+               <span ng-bind="employee.first_name"></span>
+               <span ng-bind="employee.last_name"></span>
+             </div>
+             <div class="employee__experience">
+               <span ng-bind="employee.role"></span>
+               <span ng-bind="employee.experience"></span> months
+             </div>
+             <div class="employee__short_description">
+               <span ng-bind="employee.short_description"></span>
+             </div>
            </div>
          </div>
        </div>
      </main>
+
      <footer class="footer">
        <div class="footer__container">
          © 2017 by Tomasz Tokarz, check me on
-         <a href="https://github.com/TomaszTokarz/" class="footer__link">Github</a>
+         <a href="https://github.com/TomaszTokarz/" class="footer__link"> Github</a>
        </div>
      </footer>
 
-      <!-- build:js js/main.min.js -->
-        <script src='node_modules/angular/angular.min.js'></script>
-        <script src='node_modules/firebase/firebase.js'></script>
+     <!-- build:js js/main.min.js -->
+       <script src='node_modules/firebase/firebase.js'></script>
+       <script src='node_modules/angular/angular.min.js'></script>
 
-        <script src='js/database/firebase.js'></script>
-        <script src='js/database/listeners.js'></script>
+       <script src='js/database/firebase.js'></script>
+       <script src='js/database/listeners.js'></script>
 
-        <script src='js/index.js'></script>
-        <script src='js/employees/employees.js'></script>
-      <!-- endbuild -->
+       <script src='js/index.js'></script>
+       <script src='js/employees/employees.js'></script>
+     <!-- endbuild -->
    </body>
 </html>
