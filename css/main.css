@@ -62,7 +62,11 @@ table {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  position: relative; }
+  position: relative;
+  background-color: #edf7f9;
+  padding: 20px 30px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
   .employee__name {
     font-size: 30px; }
   .employee__short_description {
@@ -74,8 +78,10 @@ table {
     background: #fff;
     z-index: 2;
     opacity: 0;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out; }
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out; }
+  .employee:hover {
+    background-color: #d9eef3; }
   .employee:hover .employee__short_description {
     opacity: 1; }
 
@@ -2461,6 +2467,7 @@ table {
   -ms-flex-pack: center;
   justify-content: center;
   margin: 30px auto;
-  max-width: 1000px; }
+  max-width: 1000px;
+  color: #1c4c55; }
   .main__container {
     width: 100%; }

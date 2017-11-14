@@ -17,6 +17,9 @@
   flex-wrap: wrap;
   justify-content: space-between;
   position: relative;
+  background-color: $main_lighten;
+  padding: 20px 30px;
+  transition: all 0.3s ease-in-out;
 
   &__name {
     font-size: 30px;
@@ -31,10 +34,14 @@
     background: $white;
     z-index: 2;
     opacity: 0;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.4s ease-in-out;
   }
 
-  &:hover &__short_description {
+  &:hover {
+    background-color: $main_lighten_2;
+  }
+
+  &:hover  &__short_description {
     opacity: 1;
   }
 }
