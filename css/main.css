@@ -3,6 +3,8 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css?family=Spectral+SC:400,700");
+@import url("https://fonts.googleapis.com/css?family=Vollkorn+SC:400,700");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -46,8 +48,15 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+.employees__header__title {
+  font-size: 35px;
+  margin-left: 100px; }
+  .employees__header__title__brand_name {
+    font-weight: bold;
+    color: #33899A; }
+
 .employees__list__item {
-  margin: 20px;
+  margin: 20px 0;
   cursor: pointer; }
 
 .employee {
@@ -97,7 +106,7 @@ table {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1000px;
     min-height: 80px;
     margin: auto;
     padding: 0 30px; }
@@ -132,7 +141,10 @@ table {
     justify-content: center; }
   .footer__link {
     cursor: pointer;
-    text-decoration: none; }
+    text-decoration: none;
+    color: #33899A;
+    font-weight: bold;
+    padding-left: 5px; }
 
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -2460,6 +2472,7 @@ table {
   clip: auto; }
 
 .main {
+  font-family: 'Vollkorn SC', serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

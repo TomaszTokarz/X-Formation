@@ -6,12 +6,17 @@
 @import '_footer';
 @import 'font-awesome/font-awesome';
 
+@import url('https://fonts.googleapis.com/css?family=Spectral+SC:400,700');
+@import url('https://fonts.googleapis.com/css?family=Vollkorn+SC:400,700');
+
 
 .main {
+  // font-family: 'Spectral SC', serif;
+  font-family: 'Vollkorn SC', serif;
   display: flex;
   justify-content: center;
   margin: 30px auto;
-  max-width: $wrappers_width - 200px;
+  max-width: $wrappers_width;
   color: $font;
 
   &__container {

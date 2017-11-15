@@ -1,4 +1,4 @@
-app.controller("EmployeesList", function($scope) {
+appModule.controller("EmployeesList", function($scope) {
    $scope.employees = [];
    runListeners($scope, $scope.employees);
 });

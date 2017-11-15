@@ -8,17 +8,23 @@
      <!-- endbuild -->
    </head>
 
-   <body ng-app = "myapp">
+   <body ng-app = "appModule">
      <header class="header">
        <div class="header__container">
          <div class="header__logo__container">
-           <div class="header__logo__container__image"><img src="images/logo-small.png"/></div>
+           <div class="header__logo__container__image">
+             <img src="images/logo-small.png"/>
+           </div>
          </div>
          <div class="header__user">
            <i class="fa fa-3x fa-user-circle-o header__user__avatar" aria-hidden="true"></i>
            <div class="header__user__info">
-             <div class="header__user__name">Tomasz Tokarz</div>
-             <div class="header__user__role">User</div>
+             <div class="header__user__name">
+               Tomasz Tokarz
+             </div>
+             <div class="header__user__role">
+               User
+             </div>
            </div>
          </div>
          <!-- <div class="header__menu__button">
@@ -32,7 +38,14 @@
      <main class="main">
        <div class="main__container">
          <div ng-controller = "EmployeesList" class="employees">
-           <div class="employees__list"></div>
+           <div class="employees__header">
+             <h2 class="employees__header__title">
+               Employees of
+               <span class="employees__header__title__brand_name">
+                 X-Formation
+               </span>
+             </h2>
+           </div>
            <div ng-repeat="employee in employees" class="employees__list__item employee">
              <div class="employee__name">
                <span ng-bind="employee.first_name"></span>

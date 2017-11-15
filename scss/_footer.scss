@@ -14,5 +14,8 @@
   &__link {
     cursor: pointer;
     text-decoration: none;
+    color: $main;
+    font-weight: bold;
+    padding-left: 5px;
   }
 }

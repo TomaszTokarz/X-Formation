@@ -3,9 +3,21 @@
 
 .employees {
 
+  &__header {
+    &__title {
+      font-size: 35px;
+      margin-left: 100px;
+
+      &__brand_name {
+        font-weight: bold;
+        color: $main;
+      }
+    }
+  }
+
   &__list {
     &__item {
-      margin: 20px;
+      margin: 20px 0;
       cursor: pointer;
     }
   }
