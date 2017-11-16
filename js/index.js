@@ -1,14 +1,15 @@
-var appModule = angular.module("appModule", []);
-
-var app = {
-  init: function() {
-  },
-  user: "Tomasz Tokarz",
-  userRole: "User"
-};
-
-
 
 (function(){
+  
+  var app = {
+    init: function() {
+      console.log('aaa', this);
+      runController(this.appModule);
+    },
+    user: "Tomasz Tokarz",
+    userRole: "User",
+    appModule: angular.module("appModule", [])
+  };
+
   app.init();
 })();

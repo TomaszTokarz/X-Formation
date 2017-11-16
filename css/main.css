@@ -49,50 +49,19 @@ table {
   border-spacing: 0; }
 
 .employees__header__title {
-  font-size: 35px;
-  margin-left: 100px; }
+  font-size: 28px;
+  text-align: center;
+  letter-spacing: 2px; }
   .employees__header__title__brand_name {
     font-weight: bold;
     color: #33899A; }
 
+.employees__table {
+  width: 100%; }
+
 .employees__list__item {
   margin: 20px 0;
   cursor: pointer; }
-
-.employee {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  position: relative;
-  background-color: #edf7f9;
-  padding: 20px 30px;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out; }
-  .employee__name {
-    font-size: 30px; }
-  .employee__short_description {
-    position: absolute;
-    top: 40px;
-    left: 50%;
-    padding: 10px 20px;
-    border: 1px solid #33899A;
-    background: #fff;
-    z-index: 2;
-    opacity: 0;
-    -webkit-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out; }
-  .employee:hover {
-    background-color: #d9eef3; }
-  .employee:hover .employee__short_description {
-    opacity: 1; }
 
 .header {
   border-bottom: 2px solid #33899A; }
@@ -2472,7 +2441,7 @@ table {
   clip: auto; }
 
 .main {
-  font-family: 'Vollkorn SC', serif;
+  font-family: 'Spectral SC', serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
