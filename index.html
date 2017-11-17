@@ -27,11 +27,6 @@
              </div>
            </div>
          </div>
-         <!-- <div class="header__menu__button">
-           <div class="header__menu__button__item"></div>
-           <div class="header__menu__button__item"></div>
-           <div class="header__menu__button__item"></div>
-         </div> -->
        </div>
      </header>
 
@@ -53,27 +48,17 @@
               <th class="employees__table__header__item employees__table__header__exp">Experience in months</th>
             </tr>
             <tr ng-repeat="employee in employees" class="employees__list__item employee">
-              <td class="employee__name">
+              <td class="employee__name employee__data">
                 <span ng-bind="employee.first_name"></span>
                 <span ng-bind="employee.last_name"></span>
               </td>
-              <td ng-bind="employee.role"></td>
-              <td ng-bind="employee.experience"></td>
+              <td ng-bind="employee.role" class="employee__role  employee__data"></td>
+              <td ng-bind="employee.experience" class="employee__experience  employee__data"></td>
               <div class="employee__short_description">
                 <span ng-bind="employee.short_description"></span>
               </div>
             </tr>
           </table>
-           <!-- <div >
-            <div >
-               
-             </div>
-             <div class="employee__experience">
-               <span></span>
-               <span></span> months
-             </div>
-             
-           </div> -->
          </div>
        </div>
      </main>

@@ -5,6 +5,7 @@
 */
 @import url("https://fonts.googleapis.com/css?family=Spectral+SC:400,700");
 @import url("https://fonts.googleapis.com/css?family=Vollkorn+SC:400,700");
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -51,17 +52,43 @@ table {
 .employees__header__title {
   font-size: 28px;
   text-align: center;
-  letter-spacing: 2px; }
+  letter-spacing: 2px;
+  margin-bottom: 20px; }
   .employees__header__title__brand_name {
     font-weight: bold;
     color: #33899A; }
 
 .employees__table {
   width: 100%; }
+  .employees__table__header {
+    background-color: #e9f5f8; }
+    .employees__table__header__item {
+      border-right: 3px solid #fff;
+      padding: 15px 0; }
+      .employees__table__header__item:last-child {
+        border-right: none; }
+    .employees__table__header__role, .employees__table__header__exp {
+      width: 210px; }
 
-.employees__list__item {
-  margin: 20px 0;
-  cursor: pointer; }
+.employee {
+  cursor: pointer;
+  background: #fff; }
+  .employee__role, .employee__experience {
+    text-align: center; }
+  .employee__data {
+    border-right: 3px solid #fff;
+    padding: 15px 0; }
+    .employee__data:last-child {
+      border-right: none; }
+  .employee__name {
+    font-size: 24px;
+    padding-left: 20px; }
+  .employee:nth-child(odd) {
+    background: #f4fafb; }
+  .employee:nth-child(even) .employee__data {
+    border-right: 3px solid #f4fafb; }
+    .employee:nth-child(even) .employee__data:last-child {
+      border-right: none; }
 
 .header {
   border-bottom: 2px solid #33899A; }
@@ -2441,7 +2468,7 @@ table {
   clip: auto; }
 
 .main {
-  font-family: 'Spectral SC', serif;
+  font-family: 'Lato', sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
