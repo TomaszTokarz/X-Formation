@@ -1,15 +1,15 @@
-
-(function(){
-  
   var app = {
-    init: function() {
-      console.log('aaa', this);
-      runController(this.appModule);
-    },
     user: "Tomasz Tokarz",
     userRole: "User",
-    appModule: angular.module("appModule", [])
+    appModule: angular.module("appModule", []),
+
+    init: function() {
+
+      runController(this.appModule);
+      runEmployeeFactory(this.appModule);
+      loginController(this.appModule, this.user, this.userRole);
+      editEmployee(this.appModule);     
+    }
   };
 
   app.init();
-})();

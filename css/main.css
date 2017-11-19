@@ -3,8 +3,6 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url("https://fonts.googleapis.com/css?family=Spectral+SC:400,700");
-@import url("https://fonts.googleapis.com/css?family=Vollkorn+SC:400,700");
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -53,7 +51,7 @@ table {
   font-size: 28px;
   text-align: center;
   letter-spacing: 2px;
-  margin-bottom: 20px; }
+  margin-bottom: 30px; }
   .employees__header__title__brand_name {
     font-weight: bold;
     color: #33899A; }
@@ -61,10 +59,12 @@ table {
 .employees__table {
   width: 100%; }
   .employees__table__header {
-    background-color: #e9f5f8; }
+    background: #e9f5f8; }
     .employees__table__header__item {
       border-right: 3px solid #fff;
-      padding: 15px 0; }
+      padding: 15px 0;
+      font-size: 24px;
+      font-weight: bold; }
       .employees__table__header__item:last-child {
         border-right: none; }
     .employees__table__header__role, .employees__table__header__exp {
@@ -72,7 +72,8 @@ table {
 
 .employee {
   cursor: pointer;
-  background: #fff; }
+  background: #fff;
+  position: relative; }
   .employee__role, .employee__experience {
     text-align: center; }
   .employee__data {
@@ -83,6 +84,15 @@ table {
   .employee__name {
     font-size: 24px;
     padding-left: 20px; }
+  .employee__short_description {
+    opacity: 1;
+    display: none;
+    margin-left: -30%;
+    padding: 20px;
+    background-color: #fff;
+    right: 0;
+    z-index: 10;
+    width: 100%; }
   .employee:nth-child(odd) {
     background: #f4fafb; }
   .employee:nth-child(even) .employee__data {
@@ -115,7 +125,10 @@ table {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    color: #33899A; }
+    color: #33899A;
+    cursor: pointer; }
+    .header__user__info {
+      position: relative; }
     .header__user__avatar {
       margin-right: 10px; }
     .header__user__name {
@@ -124,6 +137,19 @@ table {
     .header__user__role {
       font-style: italic;
       padding-left: 10px; }
+    .header__user__change {
+      position: absolute;
+      background: #fff;
+      text-align: center;
+      opacity: 0;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out; }
+    .header__user:hover .header__user__change {
+      opacity: 1; }
 
 .footer {
   border-top: 2px solid #33899A;
@@ -141,6 +167,93 @@ table {
     color: #33899A;
     font-weight: bold;
     padding-left: 5px; }
+
+.edit_employee {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  .edit_employee__title {
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-align: center; }
+  .edit_employee__delete {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 32px;
+    height: 32px;
+    border: 2px solid #266774;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    .edit_employee__delete:hover {
+      background: #266774; }
+    .edit_employee__delete__button {
+      font-size: 26px !important;
+      cursor: pointer; }
+    .edit_employee__delete:hover .edit_employee__delete__button {
+      color: #fff; }
+  .edit_employee__wrapper {
+    width: 320px;
+    position: relative; }
+  .edit_employee__attribute {
+    position: relative;
+    margin: 10px 20px; }
+    .edit_employee__attribute__description {
+      position: absolute;
+      top: -10px;
+      padding: 0 5px;
+      margin-left: 5px;
+      background: #fff;
+      font-size: 14px;
+      color: #33899A; }
+    .edit_employee__attribute__input {
+      border: 1px solid #33899A;
+      padding: 10px;
+      margin-bottom: 20px;
+      width: 280px;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box; }
+  .edit_employee__nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    .edit_employee__nav__button {
+      background: #33899A;
+      border: 2px solid #33899A;
+      color: #fff;
+      padding: 15px 25px;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer; }
+      .edit_employee__nav__button:hover {
+        background: #fff;
+        border: 2px solid #33899A;
+        color: #33899A; }
 
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -2467,8 +2580,11 @@ table {
   overflow: visible;
   clip: auto; }
 
-.main {
+.body {
   font-family: 'Lato', sans-serif;
+  color: #266774; }
+
+.main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2476,7 +2592,6 @@ table {
   -ms-flex-pack: center;
   justify-content: center;
   margin: 30px auto;
-  max-width: 1000px;
-  color: #1c4c55; }
+  max-width: 1000px; }
   .main__container {
     width: 100%; }

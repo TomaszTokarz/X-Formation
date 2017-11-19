@@ -1,15 +1,13 @@
 @import '_settings';
 
-
 .employees {
 
   &__header {
-
     &__title {
       font-size: 28px;
       text-align: center;
       letter-spacing: 2px;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
 
       &__brand_name {
         font-weight: bold;
@@ -22,11 +20,13 @@
     width: 100%;
 
     &__header {
-      background-color: $main_lighten;
+      background: $main_lighten;
 
       &__item {
         border-right: 3px solid $white;
         padding: 15px 0;
+        font-size: 24px;
+        font-weight: bold;
 
         &:last-child {
           border-right: none;
@@ -44,6 +44,7 @@
 .employee {
   cursor: pointer;
   background: $white;
+  position: relative;
 
   &__role,
   &__experience {
@@ -62,6 +63,19 @@
   &__name {
     font-size: 24px;
     padding-left: 20px;
+  }
+
+  &__short_description {
+    opacity: 1;
+    display: none;
+    // position: absolute;
+    margin-left: -30%;
+    padding: 20px;
+    background-color: #fff;
+    // top: -100%;
+    right: 0;
+    z-index: 10;
+    width: 100%;
   }
 
   &:nth-child(odd) {

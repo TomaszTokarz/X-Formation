@@ -1,0 +1,95 @@
+@import '_settings';
+
+
+.edit_employee {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba($white, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__title {
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  &__delete {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 32px;
+    height: 32px;
+    border: 2px solid $font;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background: $font;
+    }
+
+    &__button {
+      font-size: 26px !important;
+      cursor: pointer;
+    }
+
+    &:hover &__button {
+      color: $white;
+    }
+  }
+
+  &__wrapper {
+    width: 320px;
+    position: relative;
+  }
+
+  &__attribute {
+    position: relative;
+    margin: 10px 20px;
+
+    &__description {
+      position: absolute;
+      top: -10px;
+      padding: 0 5px;
+      margin-left: 5px;
+      background: $white;
+      font-size: 14px;
+      color: $main;
+    }
+
+    &__input {
+      border: 1px solid $main;
+      padding: 10px;
+      margin-bottom: 20px;
+      width: 280px;
+      box-sizing: border-box;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+
+    &__button {
+      background: $main;
+      border: 2px solid $main;
+      color: $white;
+      padding: 15px 25px;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        background: $white;
+        border: 2px solid $main;
+        color: $main;
+      }
+    }
+  }
+}

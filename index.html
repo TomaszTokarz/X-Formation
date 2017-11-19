@@ -8,7 +8,7 @@
      <!-- endbuild -->
    </head>
 
-   <body ng-app = "appModule">
+   <body ng-app = "appModule" class="body">
      <header class="header">
        <div class="header__container">
          <div class="header__logo__container">
@@ -16,15 +16,12 @@
              <img src="images/logo-small.png"/>
            </div>
          </div>
-         <div class="header__user">
+         <div class="header__user" ng-controller="User">
            <i class="fa fa-3x fa-user-circle-o header__user__avatar" aria-hidden="true"></i>
            <div class="header__user__info">
-             <div class="header__user__name">
-               Tomasz Tokarz
-             </div>
-             <div class="header__user__role">
-               User
-             </div>
+             <div class="header__user__name" ng-bind="name"></div>
+             <div class="header__user__role" ng-bind="role"></div>
+             <div class="header__user__change" ng-click="toggleUserRole()">Log in as <br/>{{altRole}}</div>
            </div>
          </div>
        </div>
@@ -32,7 +29,7 @@
 
      <main class="main">
        <div class="main__container">
-         <div ng-controller = "EmployeesList" class="employees">
+         <div ng-controller="EmployeesList" class="employees">
            <div class="employees__header">
              <h2 class="employees__header__title">
                Employees of
@@ -43,25 +40,97 @@
            </div>
            <table class="employees__table">
             <tr class="employees__table__header">
-              <th class="employees__table__header__item employees__table__header__name">Name</th>
-              <th class="employees__table__header__item employees__table__header__role">Role</th>
-              <th class="employees__table__header__item employees__table__header__exp">Experience in months</th>
+              <th class="employees__table__header__item employees__table__header__name">
+                Name
+              </th>
+              <th class="employees__table__header__item employees__table__header__role">
+                Role
+              </th>
+              <th class="employees__table__header__item employees__table__header__exp">
+                Exp. in months
+              </th>
             </tr>
-            <tr ng-repeat="employee in employees" class="employees__list__item employee">
+            <tr ng-repeat="employee in employees" class="employees__list__item employee" ng-click="editUser($index)">
               <td class="employee__name employee__data">
                 <span ng-bind="employee.first_name"></span>
                 <span ng-bind="employee.last_name"></span>
+                <div class="employee__short_description">
+                  <span ng-bind="employee.short_description"></span>
+                </div>
               </td>
               <td ng-bind="employee.role" class="employee__role  employee__data"></td>
               <td ng-bind="employee.experience" class="employee__experience  employee__data"></td>
-              <div class="employee__short_description">
-                <span ng-bind="employee.short_description"></span>
-              </div>
             </tr>
           </table>
          </div>
        </div>
      </main>
+
+     <div ng-controller="EditEmployee as employee" class="edit_employee ng-hide">
+       <div class="edit_employee__wrapper">
+         <h3 class="edit_employee__title">Edit Employee</h3>
+         <div class="edit_employee__delete" ng-click="delete()">
+           <i class="fa fa-trash-o edit_employee__delete__button" aria-hidden="true"></i>
+         </div>
+         <div class="edit_employee__attribute">
+           <span class="edit_employee__attribute__description">
+             First name
+           </span>
+           <input [employee.first_name="string"] type="text" ng-model="employee.first_name" class="edit_employee__attribute__input"></input>
+         </div>
+         <div class="edit_employee__attribute">
+           <span class="edit_employee__attribute__description">
+             Last name
+           </span>
+           <input [employee.last_name="string"] type="text" ng-model="employee.last_name" class="edit_employee__attribute__input"></input>
+         </div>
+         <div class="edit_employee__attribute">
+           <span class="edit_employee__attribute__description">
+             Position
+           </span>
+           <select [employee.position="string"] ng-model="employee.position" class="edit_employee__attribute__input">
+             <option value="Admin">Admin</option>
+             <option value="Developer">Developer</option>
+             <option value="Manager">Manager</option>
+             <option value="Tester">Tester</option>
+             <option value="HR">HR</option>
+           </select>
+           <!-- <input [employee.position="string"] ng-model="employee.position" class="edit_employee__attribute__input"></input> -->
+         </div>
+         <div class="edit_employee__attribute">
+           <span class="edit_employee__attribute__description">
+             Role
+           </span>
+           <select [employee.role="string"] ng-model="employee.role" class="edit_employee__attribute__input">
+             <option value="User">User</option>
+             <option value="Administrator">Administrator</option>
+           </select>
+           <!-- <input [employee.first_name="string"] ng-model="employee.role" class="edit_employee__attribute__input"></input> -->
+           </div>
+         <div class="edit_employee__attribute">
+           <span class="edit_employee__attribute__description">
+             Experience
+           </span>
+           <input [employee.experience="number"] type="number" min="0" ng-model="employee.experience" class="edit_employee__attribute__input"></input>
+         </div>
+         <div class="edit_employee__attribute">
+           <span class="edit_employee__attribute__description">
+             Short description
+           </span>
+           <input [employee.short_description="string"] ng-model="employee.short_description" class="edit_employee__attribute__input"></input>
+         </div>
+         <div class="edit_employee__attribute">
+           <span class="edit_employee__attribute__description">
+             Long description
+           </span>
+           <input [employee.first_name="string"] ng-model="employee.long_description" class="edit_employee__attribute__input"></input>
+         </div>
+         <div class="edit_employee__nav">
+           <div class="edit_employee__nav__button" ng-click="return()">Return</div>
+           <div class="edit_employee__nav__button" ng-click="save()">Save</div>
+         </div>
+       </div>
+     </div>
 
      <footer class="footer">
        <div class="footer__container">
@@ -76,8 +145,10 @@
 
        <script src='js/database/firebase.js'></script>
        <script src='js/database/listeners.js'></script>
+       <script src='js/database/update.js'></script>
 
        <script src='js/employees/employees.js'></script>
+       <script src='js/user/user.js'></script>
        <script src='js/index.js'></script>
      <!-- endbuild -->
    </body>

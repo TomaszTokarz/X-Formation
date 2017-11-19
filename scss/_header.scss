@@ -26,6 +26,11 @@
     display: flex;
     align-items: center;
     color: $main;
+    cursor: pointer;
+
+    &__info {
+      position: relative;
+    }
 
     &__avatar {
       margin-right: 10px;
@@ -35,9 +40,26 @@
       font-size: 20px;
       font-weight: bold;
     }
+
     &__role {
       font-style: italic;
       padding-left: 10px;
+    }
+
+    &__change {
+      position: absolute;
+      background: $white;
+      text-align: center;
+      opacity: 0;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transition: all 0.3s ease-in-out
+    }
+
+    &:hover &__change {
+      opacity: 1;
     }
   }
 }

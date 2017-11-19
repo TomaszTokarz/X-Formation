@@ -4,22 +4,23 @@
 @import '_employees';
 @import '_header';
 @import '_footer';
+@import '_edit_employee';
+
 @import 'font-awesome/font-awesome';
 
-@import url('https://fonts.googleapis.com/css?family=Spectral+SC:400,700');
-@import url('https://fonts.googleapis.com/css?family=Vollkorn+SC:400,700');
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
 
 
-.main {
-  // font-family: 'Spectral SC', serif;
-  // font-family: 'Vollkorn SC', serif;
+.body {
   font-family: 'Lato', sans-serif;
+  color: $font;
+}
+
+.main {
   display: flex;
   justify-content: center;
   margin: 30px auto;
   max-width: $wrappers_width;
-  color: $font;
 
   &__container {
     width: 100%;

@@ -1,0 +1,9 @@
+{"userRoles": [
+  {
+    "roleName": "User",
+    "editPermission": false
+  },{
+    "roleName": "Admin",
+    "editPermission": true 
+  }
+]}

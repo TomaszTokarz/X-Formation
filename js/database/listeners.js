@@ -3,4 +3,7 @@ runListeners = function(scope, table) {
       table.push(snapshot.val());
       scope.$apply();
   });
+  firebase.database().ref('employees').on('child_changed', function(snapshot) {
+      table[snapshot.val().id] = snapshot.val();
+  });
 }
