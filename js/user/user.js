@@ -1,5 +1,5 @@
-// function loginController(module, userName, userRole) {
-  angular.module("appModule", []).controller("User", function($scope, User) {
+function loginController(module, userName, userRole) {
+  module.controller("User", function($scope, User) {
       $scope.name = User.name;
       $scope.role = User.role;
       $scope.altRole = "Administrator";
@@ -18,4 +18,4 @@
         };
       };
   });
-// };
+};
