@@ -50,12 +50,17 @@
                 Exp. in months
               </th>
             </tr>
-            <tr ng-repeat="employee in employees" class="employees__list__item employee" ng-click="editUser($index)">
+            <tr ng-repeat="employee in employees" class="employees__list__item employee" ng-click="editUser($index, employee.id)">
               <td class="employee__name employee__data">
+                <i class="fa fa-user employee__data__icon" aria-hidden="true"></i>
                 <span ng-bind="employee.first_name"></span>
                 <span ng-bind="employee.last_name"></span>
                 <div class="employee__short_description">
-                  <span ng-bind="employee.short_description"></span>
+                  <div class="employee__short_description__employee">
+                    <span ng-bind="employee.first_name"></span>
+                    <span ng-bind="employee.last_name"></span>
+                  </div>
+                  <div ng-bind="employee.short_description"></div>
                 </div>
               </td>
               <td ng-bind="employee.role" class="employee__role  employee__data"></td>
@@ -76,36 +81,34 @@
            <span class="edit_employee__attribute__description">
              First name
            </span>
-           <input [employee.first_name="string"] type="text" ng-model="employee.first_name" class="edit_employee__attribute__input"></input>
+           <input [employee.first_name="string"] ng-disabled="true" type="text" ng-model="employee.first_name" class="edit_employee__attribute__input"></input>
          </div>
          <div class="edit_employee__attribute">
            <span class="edit_employee__attribute__description">
              Last name
            </span>
-           <input [employee.last_name="string"] type="text" ng-model="employee.last_name" class="edit_employee__attribute__input"></input>
+           <input [employee.last_name="string"] ng-disabled="true" type="text" ng-model="employee.last_name" class="edit_employee__attribute__input"></input>
          </div>
          <div class="edit_employee__attribute">
            <span class="edit_employee__attribute__description">
              Position
            </span>
-           <select [employee.position="string"] ng-model="employee.position" class="edit_employee__attribute__input">
+           <select [employee.position="string"] ng-disabled="adminPermission" ng-model="employee.position" class="edit_employee__attribute__input">
              <option value="Admin">Admin</option>
              <option value="Developer">Developer</option>
              <option value="Manager">Manager</option>
              <option value="Tester">Tester</option>
              <option value="HR">HR</option>
            </select>
-           <!-- <input [employee.position="string"] ng-model="employee.position" class="edit_employee__attribute__input"></input> -->
          </div>
          <div class="edit_employee__attribute">
            <span class="edit_employee__attribute__description">
              Role
            </span>
-           <select [employee.role="string"] ng-model="employee.role" class="edit_employee__attribute__input">
+           <select [employee.role="string"] ng-disabled="adminPermission" ng-model="employee.role" class="edit_employee__attribute__input">
              <option value="User">User</option>
              <option value="Administrator">Administrator</option>
-           </select>
-           <!-- <input [employee.first_name="string"] ng-model="employee.role" class="edit_employee__attribute__input"></input> -->
+           </select>           
            </div>
          <div class="edit_employee__attribute">
            <span class="edit_employee__attribute__description">
@@ -123,7 +126,7 @@
            <span class="edit_employee__attribute__description">
              Long description
            </span>
-           <input [employee.first_name="string"] ng-model="employee.long_description" class="edit_employee__attribute__input"></input>
+           <textarea rows="4" [employee.first_name="string"] ng-model="employee.long_description" class="edit_employee__attribute__input"></textarea>
          </div>
          <div class="edit_employee__nav">
            <div class="edit_employee__nav__button" ng-click="return()">Return</div>
@@ -148,6 +151,7 @@
        <script src='js/database/update.js'></script>
 
        <script src='js/employees/employees.js'></script>
+       <script src='js/employees/employee-edit.js'></script>
        <script src='js/user/user.js'></script>
        <script src='js/index.js'></script>
      <!-- endbuild -->

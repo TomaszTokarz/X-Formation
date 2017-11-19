@@ -79,20 +79,30 @@ table {
   .employee__data {
     border-right: 3px solid #fff;
     padding: 15px 0; }
+    .employee__data__icon {
+      font-size: 20px !important;
+      padding-right: 10px; }
     .employee__data:last-child {
       border-right: none; }
   .employee__name {
     font-size: 24px;
     padding-left: 20px; }
+  .employee:hover .employee__short_description {
+    opacity: 1; }
   .employee__short_description {
-    opacity: 1;
-    display: none;
-    margin-left: -30%;
-    padding: 20px;
-    background-color: #fff;
-    right: 0;
+    opacity: 0;
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    padding: 30px;
+    background: #fff;
+    border: 1px solid #33899A;
     z-index: 10;
-    width: 100%; }
+    font-size: 16px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; }
+    .employee__short_description__employee {
+      margin-bottom: 10px; }
   .employee:nth-child(odd) {
     background: #f4fafb; }
   .employee:nth-child(even) .employee__data {
@@ -235,6 +245,10 @@ table {
       width: 280px;
       -webkit-box-sizing: border-box;
       box-sizing: border-box; }
+      .edit_employee__attribute__input:disabled {
+        background: #fff; }
+    .edit_employee__attribute textarea {
+      resize: none; }
   .edit_employee__nav {
     display: -webkit-box;
     display: -ms-flexbox;

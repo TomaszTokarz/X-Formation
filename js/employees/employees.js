@@ -3,39 +3,32 @@ function runController(module) {
     $scope.employees = [];
     runListeners($scope, $scope.employees);
     $scope.isEdited = false;
-    $scope.editUser = function(index) {
-      Employee.first_name = $scope.employees[index].first_name;
-      Employee.last_name = $scope.employees[index].last_name;
-      Employee.position = $scope.employees[index].position;
-      Employee.role = $scope.employees[index].role;
-      Employee.experience = $scope.employees[index].experience;
-      Employee.short_description = $scope.employees[index].short_description;
-      Employee.long_description = $scope.employees[index].long_description;
-      Employee.id = index;
-      editEmployee(app.appModule);
-      var appElement = document.querySelector('.edit_employee');
-      appElement.classList.remove("ng-hide");
+    $scope.editUser = function(index, id) {
+
+      for(var i=0; i<$scope.employees.length; i++) {
+        if ($scope.employees[i].id == id){
+          console.log($scope.employees[i].position != "Admin")
+          if(app.userRole == "Administrator" || ($scope.employees[i].position != "Admin" && $scope.employees[i].position != "Manager" )){
+            Employee.first_name = $scope.employees[i].first_name;
+            Employee.last_name = $scope.employees[i].last_name;
+            Employee.position = $scope.employees[i].position;
+            Employee.role = $scope.employees[i].role;
+            Employee.experience = $scope.employees[i].experience;
+            Employee.short_description = $scope.employees[i].short_description;
+            Employee.long_description = $scope.employees[i].long_description;
+            Employee.id = id;
+            editEmployee(app.appModule);
+            var appElement = document.querySelector('.edit_employee');
+            appElement.classList.remove("ng-hide");
+
+          } else {
+            alert("You have no permission to edit and delete this positions")
+          }
+        }
+      }
+
     }
 
-  });
-};
-
-function editEmployee(module) {
-  module.controller("EditEmployee", function($scope, Employee) {
-    $scope.employee = Employee;
-
-    $scope.return = function() {
-      var appElement = document.querySelector('.edit_employee');
-      appElement.classList.add("ng-hide");
-    };
-    $scope.save = function() {
-      saveEmployee(Employee);
-      var appElement = document.querySelector('.edit_employee');
-      appElement.classList.add("ng-hide");
-    };
-    $scope.delete = function() {
-
-    };
   });
 };
 
