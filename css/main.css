@@ -2612,3 +2612,6 @@ table {
   max-width: 1000px; }
   .main__container {
     width: 100%; }
+
+.ng-hide {
+  display: none !important; }
