@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
    <head>
-     <title>X Formation - recruitment app</title>
+     <title>X Formation - recruitment test</title>
 
      <!--build:css css/styles.min.css-->
        <link rel='stylesheet' href='css/main.css'>
@@ -93,7 +93,7 @@
            <span class="edit_employee__attribute__description">
              Position
            </span>
-           <select [employee.position="string"] ng-disabled="adminPermission" ng-model="employee.position" class="edit_employee__attribute__input">
+           <select [employee.position="string"] ng-model="employee.position" class="edit_employee__attribute__input edit_employee__attribute__input__role__position" disabled>
              <option value="Admin">Admin</option>
              <option value="Developer">Developer</option>
              <option value="Manager">Manager</option>
@@ -105,10 +105,10 @@
            <span class="edit_employee__attribute__description">
              Role
            </span>
-           <select [employee.role="string"] ng-disabled="adminPermission" ng-model="employee.role" class="edit_employee__attribute__input">
+           <select [employee.role="string"] ng-model="employee.role" class="edit_employee__attribute__input edit_employee__attribute__input__role" disabled>
              <option value="User">User</option>
              <option value="Administrator">Administrator</option>
-           </select>           
+           </select>
            </div>
          <div class="edit_employee__attribute">
            <span class="edit_employee__attribute__description">
@@ -142,6 +142,8 @@
        </div>
      </footer>
 
+
+
      <!-- build:js js/main.min.js -->
        <script src='node_modules/firebase/firebase.js'></script>
        <script src='node_modules/angular/angular.min.js'></script>
@@ -155,5 +157,8 @@
        <script src='js/user/user.js'></script>
        <script src='js/index.js'></script>
      <!-- endbuild -->
+
+
+
    </body>
 </html>

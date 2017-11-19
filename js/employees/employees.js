@@ -1,5 +1,5 @@
 function runController(module) {
-  module.controller("EmployeesList", function($scope, Employee) {
+  module.controller("EmployeesList", function($scope, Employee, User) {
     $scope.employees = [];
     runListeners($scope, $scope.employees);
     $scope.isEdited = false;
@@ -7,8 +7,7 @@ function runController(module) {
 
       for(var i=0; i<$scope.employees.length; i++) {
         if ($scope.employees[i].id == id){
-          console.log($scope.employees[i].position != "Admin")
-          if(app.userRole == "Administrator" || ($scope.employees[i].position != "Admin" && $scope.employees[i].position != "Manager" )){
+          if(User.role == "Administrator" || ($scope.employees[i].position != "Admin" && $scope.employees[i].position != "Manager" )){
             Employee.first_name = $scope.employees[i].first_name;
             Employee.last_name = $scope.employees[i].last_name;
             Employee.position = $scope.employees[i].position;
@@ -18,22 +17,20 @@ function runController(module) {
             Employee.long_description = $scope.employees[i].long_description;
             Employee.id = id;
             editEmployee(app.appModule);
-            var appElement = document.querySelector('.edit_employee');
+            var appElement = document.querySelector(".edit_employee");
             appElement.classList.remove("ng-hide");
 
           } else {
-            alert("You have no permission to edit and delete this positions")
-          }
-        }
-      }
-
-    }
-
+            alert("You have no permission to edit and delete this positions");
+          };
+        };
+      };
+    };
   });
 };
 
 function runEmployeeFactory(module) {
-  module.factory('Employee', function(){
+  module.factory("Employee", function(){
     return {
       first_name : "",
       last_name : "",
@@ -45,4 +42,4 @@ function runEmployeeFactory(module) {
       id : ""
     };
   });
-}
+};
