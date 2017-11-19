@@ -23,12 +23,3 @@ function editEmployee(module) {
     };
   });
 };
-
-function runUserFactory(module) {
-  module.factory("User", function(){
-    return {
-      name : "Oscar Bartling",
-      role: "User"
-    };
-  });
-};
